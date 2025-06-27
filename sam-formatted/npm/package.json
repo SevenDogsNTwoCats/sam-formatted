@@ -1,0 +1,32 @@
+{
+  "name": "sam-formatted",
+  "version": "1.0.0",
+  "description": "A script for formatting and displaying logs from AWS SAM.",
+  "main": "index.js",
+  "bin": {
+    "sam-formatted": "../bin/sam-formatted.sh"
+  },
+  "scripts": {
+    "install": "bash ../scripts/install.sh",
+    "uninstall": "bash ../scripts/uninstall.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SevenDogsNTwoCats/sam-formatted.git"
+  },
+  "keywords": [
+    "aws",
+    "sam",
+    "formatting",
+    "logs"
+  ],
+  "author": "Alhanis Espinal",
+  "license": "MIT",
+  "dependencies": {
+    "jq": "^1.6"
+  },
+  "homepage": "https://github.com/SevenDogsNTwoCats/sam-formatted#readme",
+  "bugs": {
+    "url": "https://github.com/SevenDogsNTwoCats/sam-formatted/issues"
+  }
+}

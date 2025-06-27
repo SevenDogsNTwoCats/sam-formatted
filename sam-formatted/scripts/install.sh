@@ -1,0 +1,45 @@
+#!/bin/bash
+# This script installs the necessary dependencies and sets up the sam-formatted project.
+
+# Function to display help information
+show_help() {
+  echo "Usage: ./install.sh [OPTIONS]"
+  echo ""
+  echo "Options:"
+  echo "  --help                 Display this help message"
+}
+
+# Check for help option
+if [[ "$1" == "--help" ]]; then
+  show_help
+  exit 0
+fi
+
+# Install dependencies (example: jq, awscli)
+echo "Installing necessary dependencies..."
+
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+  echo "jq is not installed. Installing jq..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install jq
+  else
+    sudo apt-get install jq -y
+  fi
+else
+  echo "jq is already installed."
+fi
+
+# Check if AWS CLI is installed
+if ! command -v aws &> /dev/null; then
+  echo "AWS CLI is not installed. Installing AWS CLI..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install awscli
+  else
+    sudo apt-get install awscli -y
+  fi
+else
+  echo "AWS CLI is already installed."
+fi
+
+echo "Installation complete!"
