@@ -43,13 +43,4 @@ else
   echo "AWS CLI is already installed."
 fi
 
-echo "Installation complete!"
-
-#check if node is installed
-if ! command -v node &> /dev/null; then
-  echo "Node.js is not installed. Please install Node.js to continue."
-  exit 1    
-else
-  echo "Node.js is installed."
-fi
 
