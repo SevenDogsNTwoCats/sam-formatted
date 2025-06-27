@@ -73,4 +73,4 @@ sudo chmod +x "$INSTALL_DIR/sam-formatted"
 # remove the install script
 echo "Cleaning up..."
 rm -f "$INSTALL_DIR/sam-formatted-temp"
-rm -f "./install.sh"
+rm  "install.sh"
