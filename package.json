@@ -1,6 +1,6 @@
 {
   "name": "sam-formatted",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A script for formatting and displaying logs from AWS SAM.",
   "main": "index.js",
   "bin": {
