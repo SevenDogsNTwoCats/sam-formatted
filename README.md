@@ -22,6 +22,7 @@ npm uninstall -g sam-formatted
 ### Using Homebrew
 If you are on macOS, you can install the project using Homebrew:
 ```
+brew tap SevenDogsNTwoCats/sam-formatted
 brew install sam-formatted
 ```
 
