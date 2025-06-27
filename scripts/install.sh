@@ -43,3 +43,43 @@ else
 fi
 
 echo "Installation complete!"
+
+#check if node is installed
+if ! command -v node &> /dev/null; then
+  echo "Node.js is not installed. Please install Node.js to continue."
+  exit 1    
+else
+  echo "Node.js is installed."
+fi
+
+# check if npm is installed
+if ! command -v npm &> /dev/null; then
+  echo "npm is not installed. Please install Node.js and npm to continue."
+  exit 1
+else
+  echo "npm is installed."  
+  # Install npm dependencies
+  echo "Installing npm dependencies..."
+  npm install --prefix npm
+  if [[ $? -ne 0 ]]; then
+    echo "Failed to install npm dependencies. Please check the npm logs for more details."
+    exit 1
+  else
+    echo "npm dependencies installed successfully."
+  fi
+fi
+
+#check if nodemon is installed globally
+if ! command -v nodemon &> /dev/null; then
+  echo "nodemon is not installed globally. Installing nodemon..."
+  npm install -g nodemon
+  if [[ $? -ne 0 ]]; then
+    echo "Failed to install nodemon. Please check the npm logs for more details."
+    exit 1
+  else
+    echo "nodemon installed successfully."
+  fi
+else
+  echo "nodemon is already installed globally." 
+fi
+
