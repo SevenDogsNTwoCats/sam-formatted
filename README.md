@@ -1,7 +1,7 @@
 # sam-formatted
 A command-line tool for formatting and displaying logs from AWS SAM (Serverless Application Model). This project provides an easy way to run and manage AWS SAM locally, with features for automatic rebuilding and restarting of the local API and formatting Logs.
 
-https://github.com/SevenDogsNTwoCats/sam-formatted/tree/main?tab=readme-ov-file
+https://github.com/SevenDogsNTwoCats/sam-formatted/tree/main
 https://www.npmjs.com/package/sam-formatted
 
 ## Features
