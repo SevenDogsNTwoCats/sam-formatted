@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 const path = require('path');
 
 // Path to the main script
-const scriptPath = path.join(__dirname, '../..', 'bin', 'sam-formatted.sh');
+const scriptPath = path.join(__dirname, '../..', 'bin', 'run-sam-formatted.sh');
 
 // Function to execute the main script
 const runScript = (args) => {
