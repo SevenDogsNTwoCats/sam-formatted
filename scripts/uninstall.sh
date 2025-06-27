@@ -1,17 +1,29 @@
 #!/bin/bash
-# @description This script uninstalls the SAM formatted tool, removing any installed files and configurations.
+# This script uninstalls the sam-formatted tool
 
-# Define the installation directory
-INSTALL_DIR="/usr/local/bin/sam-formatted"
+# Define the installation path
+INSTALL_PATH="/usr/local/bin/sam-formatted"
 
-# Check if the installation directory exists
-if [ -d "$INSTALL_DIR" ]; then
-  echo "Uninstalling SAM formatted tool..."
+# Check if the file exists
+if [ -f "$INSTALL_PATH" ]; then
+  echo "Uninstalling sam-formatted..."
   
-  # Remove the installation directory
-  rm -rf "$INSTALL_DIR"
+  # Request sudo permission to remove the file
+  sudo rm "$INSTALL_PATH"
   
-  echo "SAM formatted tool has been uninstalled successfully."
+  echo "✅ sam-formatted has been uninstalled successfully."
 else
-  echo "SAM formatted tool is not installed."
+  echo "❌ sam-formatted is not installed at $INSTALL_PATH."
 fi
+
+# Check for and remove nodemon if installed by this script
+if command -v nodemon &> /dev/null; then
+  echo "Do you want to uninstall nodemon as well? (y/n)"
+  read -r response
+  if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    npm uninstall -g nodemon
+    echo "Nodemon has been uninstalled."
+  fi
+fi
+
+echo "Uninstallation complete."
