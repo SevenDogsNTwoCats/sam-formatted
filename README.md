@@ -14,7 +14,7 @@ You can install the project globally using npm:
 ```
 npm install -g sam-formatted
 ```
-You can uninstall the package whit
+You can uninstall the package with
 ```
 npm uninstall -g sam-formatted
 ```
@@ -33,7 +33,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-You can uninstall whit
+You can uninstall with
 ```
 curl -s https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/scripts/uninstall.sh | bash 
 ```
