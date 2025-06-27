@@ -1,16 +1,45 @@
 #!/bin/bash
-set -e
+# This script installs the necessary dependencies and sets up the sam-formatted project.
 
-INSTALL_DIR="/usr/local/bin"
-SCRIPT_NAME="sam-formatted"
+# Function to display help information
+show_help() {
+  echo "Usage: ./install.sh [OPTIONS]"
+  echo ""
+  echo "Options:"
+  echo "  --help                 Display this help message"
+}
 
-echo "Installing $SCRIPT_NAME..."
+# Check for help option
+if [[ "$1" == "--help" ]]; then
+  show_help
+  exit 0
+fi
 
-# Download the script
-curl -s -o "$INSTALL_DIR/$SCRIPT_NAME" https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/run-sam-formatted.sh
+# Install dependencies (example: jq, awscli)
+echo "Installing necessary dependencies..."
 
-# Make it executable
-chmod +x "$INSTALL_DIR/$SCRIPT_NAME"
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+  echo "jq is not installed. Installing jq..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install jq
+  else
+    sudo apt-get install jq -y
+  fi
+else
+  echo "jq is already installed."
+fi
 
-echo "$SCRIPT_NAME has been installed to $INSTALL_DIR"
-echo "You can now run it using: $SCRIPT_NAME"
+# Check if AWS CLI is installed
+if ! command -v aws &> /dev/null; then
+  echo "AWS CLI is not installed. Installing AWS CLI..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install awscli
+  else
+    sudo apt-get install awscli -y
+  fi
+else
+  echo "AWS CLI is already installed."
+fi
+
+echo "Installation complete!"
