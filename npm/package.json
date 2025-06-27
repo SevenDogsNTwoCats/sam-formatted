@@ -18,7 +18,8 @@
     "aws",
     "sam",
     "formatting",
-    "logs"
+    "logs",
+    "jq"
   ],
   "author": "Alhanis Espinal",
   "license": "MIT",
