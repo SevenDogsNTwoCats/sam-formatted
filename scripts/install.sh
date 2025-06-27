@@ -54,25 +54,22 @@ if ! command -v nodemon &> /dev/null; then
 else
   echo "nodemon is already installed."
 fi
-
 # Download the script
 echo "Downloading sam-formatted script..."
-curl -o sam-formatted https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
+curl -o sam-formatted-temp https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
 
 # Make the script executable
-chmod +x sam-formatted
+chmod +x sam-formatted-temp
 
 # Install to path
 echo "Installing sam-formatted to your system..."
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  INSTALL_DIR="/usr/local/bin"
-else
-  INSTALL_DIR="/usr/local/bin"
-fi
+INSTALL_DIR="/usr/local/bin"
 
 # Ask for sudo permission to move to bin directory
 echo "This step requires sudo permission to install to $INSTALL_DIR"
-sudo mv sam-formatted "$INSTALL_DIR/"
+sudo mv sam-formatted-temp "$INSTALL_DIR/sam-formatted"
+sudo chmod +x "$INSTALL_DIR/sam-formatted"
 
-echo "✅ Installation complete! You can now run 'sam-formatted' from anywhere."
-echo "Try running: sam-formatted --help"
+# remove the install script
+echo "Cleaning up..."
+rm -f "$INSTALL_DIR/sam-formatted-temp"
