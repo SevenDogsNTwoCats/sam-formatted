@@ -43,4 +43,11 @@ else
   echo "AWS CLI is already installed."
 fi
 
+# execute curl -o sam-formatted.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
+
+curl -o sam-formatted.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
+
+# Make the script executable
+chmod +x sam-formatted.sh
+
 

@@ -24,8 +24,9 @@ brew install sam-formatted
 ### Using curl
 You can also download the script directly using curl:
 ```
-curl -o sam-formatted.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
-chmod +x sam-formatted.sh
+curl -o install.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/scripts/install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 ## Usage

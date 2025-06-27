@@ -1,15 +1,15 @@
+# homebrew-sam-formatted/sam-formatted.rb
 class SamFormatted < Formula
-  desc "Pretty-printed AWS SAM CLI output"
+  desc "A command-line tool for formatting and displaying logs from AWS SAM"
   homepage "https://github.com/SevenDogsNTwoCats/sam-formatted"
-  url "https://github.com/SevenDogsNTwoCats/sam-formatted/archive/v1.0.0.tar.gz"
+  url "https://github.com/SevenDogsNTwoCats/sam-formatted/archive/v1.0.1.tar.gz"
   sha256 "YOUR_TARBALL_SHA256"
   license "MIT"
 
   depends_on "jq"
-  depends_on "node"
 
   def install
-    bin.install "run-sam-formatted.sh" => "sam-formatted"
+    bin.install "bin/sam-formatted.sh" => "sam-formatted"
   end
 
   test do
