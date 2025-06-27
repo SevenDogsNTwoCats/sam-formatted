@@ -7,7 +7,7 @@
     "sam-formatted": "../bin/sam-formatted.sh"
   },
   "scripts": {
-    "install": "bash ../scripts/install.sh",
+    "install": "node ./npm/index.js",
     "uninstall": "bash ../scripts/uninstall.sh"
   },
   "repository": {
@@ -18,8 +18,7 @@
     "aws",
     "sam",
     "formatting",
-    "logs",
-    "jq"
+    "logs"
   ],
   "author": "Alhanis Espinal",
   "license": "MIT",
