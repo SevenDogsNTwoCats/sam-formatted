@@ -35,6 +35,11 @@ brew tap SevenDogsNTwoCats/sam-formatted
 brew install sam-formatted
 ```
 
+You can uninstall with
+```
+brew uninstall sam-formatted
+```
+
 ### Using curl
 You can also download the script directly using curl:
 ```
