@@ -13,6 +13,11 @@ https://www.npmjs.com/package/sam-formatted
 
 ## Installation
 
+### Requirements
+- jq
+- nodemon
+
+
 ### Using npm
 You can install the project globally using npm:
 ```
