@@ -43,11 +43,36 @@ else
   echo "AWS CLI is already installed."
 fi
 
-# execute curl -o sam-formatted.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
+# Check if nodemon is installed
+if ! command -v nodemon &> /dev/null; then
+  echo "nodemon is not installed. Installing nodemon..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    npm install -g nodemon
+  else
+    sudo npm install -g nodemon
+  fi
+else
+  echo "nodemon is already installed."
+fi
 
-curl -o sam-formatted.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
+# Download the script
+echo "Downloading sam-formatted script..."
+curl -o sam-formatted https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/bin/sam-formatted.sh
 
 # Make the script executable
-chmod +x sam-formatted.sh
+chmod +x sam-formatted
 
+# Install to path
+echo "Installing sam-formatted to your system..."
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  INSTALL_DIR="/usr/local/bin"
+else
+  INSTALL_DIR="/usr/local/bin"
+fi
 
+# Ask for sudo permission to move to bin directory
+echo "This step requires sudo permission to install to $INSTALL_DIR"
+sudo mv sam-formatted "$INSTALL_DIR/"
+
+echo "✅ Installation complete! You can now run 'sam-formatted' from anywhere."
+echo "Try running: sam-formatted --help"
