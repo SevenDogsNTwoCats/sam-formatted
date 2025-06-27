@@ -4,11 +4,10 @@
   "description": "A script for formatting and displaying logs from AWS SAM.",
   "main": "index.js",
   "bin": {
-    "sam-formatted": "../bin/sam-formatted.sh"
+    "sam-formatted": "./bin/sam-formatted.sh"
   },
   "scripts": {
-    "install": "node ./npm/index.js",
-    "uninstall": "bash ../scripts/uninstall.sh"
+    "postinstall": "chmod +x ./bin/sam-formatted.sh"
   },
   "repository": {
     "type": "git",
