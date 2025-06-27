@@ -73,4 +73,12 @@ sudo chmod +x "$INSTALL_DIR/sam-formatted"
 # remove the install script
 echo "Cleaning up..."
 rm -f "$INSTALL_DIR/sam-formatted-temp"
-rm  "install.sh"
+
+# Get the absolute path of the script
+SCRIPT_PATH=$(realpath "$0")
+
+# Remove the script
+rm -f "$SCRIPT_PATH"
+
+echo "✅ Installation complete! You can now run 'sam-formatted' from anywhere."
+echo "Try running: sam-formatted --help"

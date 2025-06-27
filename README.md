@@ -14,6 +14,10 @@ You can install the project globally using npm:
 ```
 npm install -g sam-formatted
 ```
+You can uninstall the package whit
+```
+npm uninstall -g sam-formatted
+```
 
 ### Using Homebrew
 If you are on macOS, you can install the project using Homebrew:
@@ -27,6 +31,16 @@ You can also download the script directly using curl:
 curl -o install.sh https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/scripts/install.sh
 chmod +x install.sh
 ./install.sh
+```
+
+You can uninstall whit
+```
+curl -s https://raw.githubusercontent.com/SevenDogsNTwoCats/sam-formatted/main/scripts/uninstall.sh | bash 
+```
+
+or deleting the folder
+```
+sudo rm /usr/local/bin/sam-formatted
 ```
 
 ## Usage
