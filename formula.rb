@@ -6,7 +6,7 @@ class SamFormatted < Formula
   sha256 "f9703711e0e001a173371822a8cee9302e63dc6dce8913aa67acf6b46e393bf5"
   license "MIT"
 
-  depends_on "jq", "sam-cli", "node", "npm", "nodemon", "awscli"
+  depends_on "jq"
 
   def install
     bin.install "bin/sam-formatted.sh" => "sam-formatted"
