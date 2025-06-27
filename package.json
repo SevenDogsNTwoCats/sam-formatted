@@ -1,6 +1,6 @@
 {
   "name": "sam-formatted",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A script for formatting and displaying logs from AWS SAM.",
   "main": "index.js",
   "bin": {
@@ -22,7 +22,8 @@
   "author": "Alhanis Espinal",
   "license": "MIT",
   "dependencies": {
-    "jq": "^1.6"
+    "jq": "^1.6",
+    "nodemon": "^2.0.22"
   },
   "homepage": "https://github.com/SevenDogsNTwoCats/sam-formatted#readme",
   "bugs": {
